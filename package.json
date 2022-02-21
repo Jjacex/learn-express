@@ -4,7 +4,8 @@
   "description": "web dev simplified tut on express.js",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "devStart": "nodemon server.js"
   },
   "repository": {
     "type": "git",
@@ -15,5 +16,12 @@
   "bugs": {
     "url": "https://github.com/Jjacex/learn-express/issues"
   },
-  "homepage": "https://github.com/Jjacex/learn-express#readme"
+  "homepage": "https://github.com/Jjacex/learn-express#readme",
+  "dependencies": {
+    "ejs": "^3.1.6",
+    "express": "^4.17.3"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
 }
