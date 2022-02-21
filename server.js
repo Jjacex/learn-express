@@ -1,11 +1,19 @@
 const express = require('express') //pulling in the express module
 const app = express() //applying the module to the const app for functionality
 
+//the below code allows us to acces static pages easily
+//all static files should be kept in the public folder
+//this is a standard naming convention
+//now when we go to localhost:3000/test.html we can see our page rendered
+//the parameter "public" that we passed in below tells express to look in this folder for static files
+app.use(express.static("public"))
+
 //ejs is used to allow us to render html documents through express
 //there are other options, but this is a popular one
 //the below syntax must be set in order to render html
 //also, your .html extentions will need to be changed to .ejs instead
 app.set('view engine', 'ejs')
+
 
 //this is a simple get request
 //this function will fire when our user loads the following route
@@ -33,5 +41,7 @@ const userRouter = require('./routes/users')
 //in users.js, the "homepage" is localhost:3000/users
 //take a look in users.js and you will see that the "homepage" route is "/"
 app.use("/users", userRouter)
+
+
 
 app.listen(3000) //this line launches our server on a specific port

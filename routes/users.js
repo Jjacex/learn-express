@@ -5,6 +5,7 @@
 
 const express = require("express") //bringing in express
 const router = express.Router() //this brings in the router functionality mentioned above
+router.use(logger)
 
 //check out the app.use function in server.js
 //we have mounted the users path to this file
@@ -56,10 +57,25 @@ router.route("/:id")
     })
 
 
+//the below code allows us to access the values of users at a given id
+//for example, when you call localhost:3000/users/1 we will see sally outputted to our terminal
+//this is because sally is the second person in our array users
+//this block of code runs before anything else in this file
+//if we do not run the next function, this code will keep the page loading indefinitly
+//the first arguement in router.param is the value we want to grab
+//the second argument is a callback function
+//in the function we set req.user (we made up the user part of this variable name) to our user[id]
+//now we can access this information in other areas of our code
+//in the get request for a single user above, we are using this information to log sally our to the terminal  
 const users = [{name: "kyle"}, {name: "sally"}]
 router.param("id", (req, res, next, id) => {
     req.user = users[id]
     next()
 })
+
+function logger(req, res, next){
+    console.log(req.originalUrl)
+    next()
+}
 
 module.exports = router
