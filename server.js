@@ -22,4 +22,16 @@ app.get('/', (req, res) => {
     res.render('index', {text234: "World"})
 })
 
+//the below line brings in our routes from users.js
+//you have to be specific about the files path location
+const userRouter = require('./routes/users')
+
+//the logic in the below line is important for establishing our routes
+//here is what is happeneing
+//the first parameter is telling express "where" to mount this router
+//that means when we request localhost:3000/users express will look in user.js
+//in users.js, the "homepage" is localhost:3000/users
+//take a look in users.js and you will see that the "homepage" route is "/"
+app.use("/users", userRouter)
+
 app.listen(3000) //this line launches our server on a specific port
