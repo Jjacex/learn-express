@@ -1,0 +1,19 @@
+{
+  "name": "learn-express",
+  "version": "1.0.0",
+  "description": "web dev simplified tut on express.js",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jjacex/learn-express.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jjacex/learn-express/issues"
+  },
+  "homepage": "https://github.com/Jjacex/learn-express#readme"
+}
