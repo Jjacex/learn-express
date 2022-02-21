@@ -14,6 +14,14 @@ app.use(express.static("public"))
 //also, your .html extentions will need to be changed to .ejs instead
 app.set('view engine', 'ejs')
 
+//the below line of middleware allows us to access our req.body parameters
+//without this, you will recieve an error when trying to get form data coming from the user
+app.use(express.urlencoded({ extended: true }))
+
+//the below line of middleware allows us to fetch information from the server to the user
+//it is needed in order to grab data from the server and display that info on your page
+app.use(express.json())
+
 
 //this is a simple get request
 //this function will fire when our user loads the following route

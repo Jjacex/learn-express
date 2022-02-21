@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- this form teaches us some important information -->
+    <!-- Notice the action is /users -->
+    <!-- this is the page we will be targeting -->
+    <!-- the method is then post -->
+    <!-- when we submit the form, it will call our post request written for that page -->
+    <!-- check users.js to see how posts to this page will be handled -->
+    <!-- the name in this is "firstName" -->
+    <!-- after submitting the form, we can then access this data on our backend -->
+    <!-- res.body.firstName is how we acces the information passed along -->
+    <form action="/users" method="POST">
+        <label>First Name
+            <input type="text" name="firstName" value="<%= locals.firstName %>">
+        </label>
+        <button type="submit">Submit</button>
+    </form>
+
+</body>
+</html>
